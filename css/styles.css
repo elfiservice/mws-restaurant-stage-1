@@ -205,12 +205,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 /* ====================== Restaurant Details ====================== */
-/* .inside .site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-} */
+
 
 .inside #map {
   background-color: #ccc;
@@ -335,6 +330,28 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     margin-right: 0%;
   }
 
+  #restaurant-container {
+    margin-top: 130px;
+  }
+
+  #restaurant-container, #reviews-container {
+    width: 50%; 
+  }
+
+
+  .inside .site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* z-index: 1000; */
+}
+
+.inside #footer {
+  bottom: 0;
+  position: relative;
+  width: 50%;
+}
+
   .restaurants li {
     width: 32%;
     margin-right: 1%;
@@ -371,4 +388,16 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     margin-right: 0%;
   }
 
+  #reviews-list article {
+    padding: 10px;
+  }
+
+  #reviews-list li {
+    width: 49%;
+    margin-right: 1%;
+  }
+
+  #reviews-list li:nth-child(2n+2) {
+    margin-right: 0%;
+  }
 }
