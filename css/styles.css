@@ -100,7 +100,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
 
 /* Display list items side by side */
@@ -205,12 +205,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside .site-header {
+/* .inside .site-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-}
+} */
 
 .inside #map {
   background-color: #ccc;
