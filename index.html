@@ -11,18 +11,21 @@
 
 <body>
   <header>
-    <nav class="container">
-      <h1  class="content"><a href="/">Restaurant Reviews</a></h1>
-    </nav>
+    <div class="container header">
+        <h1  class="content">
+            <a href="/" alt="Header link to navigate to Home page of Restaurant Reviews Website">Restaurant Reviews</a>
+        </h1>
+    </div>
   </header>
 
   <main id="maincontent">
     <section id="map-container">
+      <h2 class="offscreen">Map to the restaurants</h2>
       <div id="map"></div>
     </section>
     <section class="container filter-options flex-box">
       <div class="content">
-        <h2>Filter Results</h2>
+        <h2>Filtring Restaurants</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -33,19 +36,17 @@
       
     </section>
     <section class="container restaurants">
+      <h2 class="offscreen">Filter Results</h2>
       <ul id="restaurants-list" class="content flex-box"></ul>
     </section>
   </main>
+  <footer id="footer">
+      Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
 
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAILItbOkE1Mn7szvYOKfyIgC_TjJIztW4&libraries=places&callback=initMap"></script>
-
-
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-  </footer>
-
 </body>
 
 </html>
