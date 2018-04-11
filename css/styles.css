@@ -375,6 +375,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     width: 100%;
   }
 
+  .restaurant-content .col-50 {
+    width: 100%;
+    
+  }
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -400,4 +405,17 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   #reviews-list li:nth-child(2n+2) {
     margin-right: 0%;
   }
+
+  .restaurant-content .col-50 {
+    width: 49%;
+    margin-right: 1%;
+  }
+
+  .restaurant-content div:nth-child(2n+2) {
+    margin-right: 0%;
+  }
+  
+
+
+
 }
