@@ -12,20 +12,20 @@
 <body>
   <header>
     <div class="container header">
-        <h1  class="content">
-            <a href="/" alt="Header link to navigate to Home page of Restaurant Reviews Website">Restaurant Reviews</a>
+        <h1  class="content" >
+            <a href="/" title="Header link to navigate to Home page of Restaurant Reviews Website" alt="Header link to navigate to Home page of Restaurant Reviews Website">Restaurant Reviews</a>
         </h1>
     </div>
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" tabindex="-1">
       <h2 class="offscreen">Map to the restaurants</h2>
       <div id="map"></div>
     </section>
     <section class="container filter-options flex-box">
-      <div class="content">
-        <h2>Filtring Restaurants</h2>
+      <div tabindex="0" class="content">
+        <h2 >Filtring Restaurants</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -36,8 +36,8 @@
       
     </section>
     <section class="container restaurants">
-      <h2 class="offscreen">Filter Results</h2>
-      <ul id="restaurants-list" class="content flex-box"></ul>
+      <h2 id="filter-results" class="offscreen">Filter Results</h2>
+      <ul role="tree" aria-labelledby="filter-results" id="restaurants-list" class="content flex-box"></ul>
     </section>
   </main>
   <footer id="footer">
