@@ -20,12 +20,12 @@
 
   <main id="maincontent">
     <section id="map-container" tabindex="-1">
-      <h2 class="offscreen">Map to the restaurants</h2>
+      <h2 tabindex="0" class="offscreen">Map to the restaurants</h2>
       <div id="map"></div>
     </section>
-    <section class="container filter-options flex-box">
-      <div tabindex="0" class="content">
-        <h2 >Filtring Restaurants</h2>
+    <section tabindex="0" class="container filter-options flex-box">
+      <div class="content">
+        <h2>Filtring Restaurants</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -37,7 +37,7 @@
     </section>
     <section class="container restaurants">
       <h2 id="filter-results" class="offscreen">Filter Results</h2>
-      <ul role="tree" aria-labelledby="filter-results" id="restaurants-list" class="content flex-box"></ul>
+      <ul tabindex="0" role="tree" aria-labelledby="filter-results" id="restaurants-list" class="content flex-box"></ul>
     </section>
   </main>
   <footer id="footer">

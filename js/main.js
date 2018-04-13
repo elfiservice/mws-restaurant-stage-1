@@ -139,10 +139,11 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
   li.setAttribute('role', 'treeitem');
   li.setAttribute('aria-expanded', 'true');
-  li.setAttribute('tabindex', '0');
+  
   const articleTag = document.createElement('article');
 
   const image = document.createElement('img');
+  image.setAttribute('tabindex', '0');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.setAttribute('alt', `Image of restaurant ${restaurant.name} located in ${restaurant.neighborhood}`);
@@ -152,15 +153,18 @@ createRestaurantHTML = (restaurant) => {
   divInfoContent.classList.add('restaurant-info');
 
   const name = document.createElement('h3');
-  name.innerHTML = restaurant.name;
+  name.setAttribute('tabindex', '0');
+  name.innerHTML = "<span aria-label=\"Restaurant name: \"></span>" + restaurant.name;
   divInfoContent.append(name);
 
   const neighborhood = document.createElement('p');
-  neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.setAttribute('tabindex', '0');
+  neighborhood.innerHTML = "<span aria-label=\"Restaurant neighborhood: \"></span>" + restaurant.neighborhood;
   divInfoContent.append(neighborhood);
 
   const address = document.createElement('p');
-  address.innerHTML = restaurant.address;
+  address.setAttribute('tabindex', '0');
+  address.innerHTML = "<span aria-label=\"Restaurant address: \"></span>" + restaurant.address;
   divInfoContent.append(address);
 
   const more = document.createElement('a');
