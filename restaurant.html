@@ -26,7 +26,7 @@
         <h2 class="offscreen">Page navigation</h2>
       </header>
       <ul id="breadcrumb" >
-          <li><a href="/">Home</a></li>
+          <li><a href="/" alt="Navegation to home page" title="Navegation to home page">Home</a></li>
       </ul>
     </nav>
 
@@ -38,23 +38,23 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
-      <h2 class="offscreen">Map to the restaurant selected</h2>
-      <div id="map"></div>
+    <section id="map-container" tabindex="-1">
+      <h2 tabindex="0" class="offscreen">Map to the restaurant selected</h2>
+      <div tabindex="-1" id="map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" class="container">
-        <h2 id="restaurant-name"></h2>
+    <section id="restaurant-container" class="container" >
+      <h2 tabindex="0" id="restaurant-name"></h2>
       <div class="content flex-box restaurant-content">
           
           <div class="col-50 image-restaurant">
-              <img id="restaurant-img">
+              <img tabindex="0" id="restaurant-img">
           </div>
           <div class="col-50 info-restaurant">
-              <p id="restaurant-cuisine"></p>
-              <p id="restaurant-address"></p>
-              <table id="restaurant-hours"></table>
+              <p tabindex="0" id="restaurant-cuisine"></p>
+              <p tabindex="0" id="restaurant-address"></p>
+              <table tabindex="0" aria-label="Restaurant hours:" role="list" id="restaurant-hours"></table>
           </div>
 
       </div>
@@ -63,7 +63,7 @@
     <!-- end restaurant -->
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list" class="flex-box"></ul>
+      <ul role="list" aria-labelledby="reviews-container" id="reviews-list" class="flex-box"></ul>
     </section>
     <!-- End reviews -->
   </main>

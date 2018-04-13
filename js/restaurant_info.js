@@ -50,10 +50,10 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
-  name.innerHTML = restaurant.name;
+  name.innerHTML = "<span aria-label=\"Restaurant name: \"></span>" + restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  address.innerHTML = "<span aria-label=\"Restaurant address: \"></span>" + restaurant.address;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
@@ -61,7 +61,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.setAttribute('alt', `Image of restaurant ${restaurant.name} located in ${restaurant.neighborhood}`);
 
   const cuisine = document.getElementById('restaurant-cuisine');
-  cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.innerHTML = "<span aria-label=\"Restaurant cuisine: \"></span>" + restaurant.cuisine_type;
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -78,6 +78,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
+    row.setAttribute('tabindex', '0');
+    row.setAttribute('role', 'listitem');
 
     const day = document.createElement('td');
     day.innerHTML = key;
@@ -97,6 +99,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
+  title.setAttribute('tabindex', '0');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -118,32 +121,37 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  li.setAttribute('role', 'listitem');
+ 
   const articleTag = document.createElement('article');
   const headerArticle = document.createElement('header');
   const hTag = document.createElement('h3');
+  hTag.setAttribute('tabindex', '0');
 
   const name = document.createElement('span');
-  name.innerHTML = review.name;
+  name.innerHTML = "<span aria-label=\"Name of reviewer: \"></span>" + review.name;
   hTag.appendChild(name);
 
   const date = document.createElement('span');
-  date.innerHTML = review.date;
+  date.innerHTML = "<span aria-label=\"Date: \"></span>" + review.date;
   hTag.appendChild(date);
 
   headerArticle.appendChild(hTag);
   articleTag.appendChild(headerArticle);
 
   const rating = document.createElement('p');
+  rating.setAttribute('tabindex', '0');
   let starsRating = "";
   for (let i = 0; i < review.rating; i++) {
     starsRating += '&#9733;';
   }
 
-  rating.innerHTML = `${starsRating}`;
+  rating.innerHTML = "<span aria-label=\"Rating: "+ review.rating +" stars \"></span>" + `${starsRating}`;
   articleTag.appendChild(rating);
 
   const comments = document.createElement('p');
-  comments.innerHTML = review.comments;
+  comments.setAttribute('tabindex', '0');
+  comments.innerHTML = "<span aria-label=\"Comments: \"></span>" + review.comments;
   articleTag.appendChild(comments);
 
   li.appendChild(articleTag);
